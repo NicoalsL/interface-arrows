@@ -1,0 +1,65 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  /* background-color: #2a2a2a; */
+}
+
+.input-container {
+  position: relative;
+  display: inline-block;
+  padding: 4px; /* Espace pour la bordure animée */
+  border-radius: 10px;
+}
+
+.input-container::before {
+  content: "";
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  right: -3px;
+  bottom: -3px;
+  border-radius: 12px;
+  background: linear-gradient(45deg, #dd7f6e, #dd7f6e, #6c757d, #dd7f6e);
+  background-size: 300% 300%;
+  animation: move-border 4s linear infinite;
+  filter: blur(3px); /* Flou uniquement sur le dégradé */
+  z-index: -1;
+}
+
+@keyframes move-border {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.input-container input {
+  width: 450px;
+  padding: 12px;
+  font-size: 16px;
+  border: none;
+  outline: none;
+  background-color: #111;
+  color: white;
+  border-radius: 8px;
+  position: relative;
+  z-index: 1;
+  display: block;
+}
+
+
+
